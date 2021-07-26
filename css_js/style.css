@@ -76,7 +76,7 @@ body {
   border-radius: 12px;
   outline: none;
   border: none;
-  background: #1d1d31;
+  background: #1d1b31;
   padding-left: 50px;
   font-size: 18px;
   color: #fff;
@@ -109,4 +109,55 @@ body {
   border-radius: 12px;
   line-height: 50px;
   text-align: center;
+}
+
+.sidebar .profile_content {
+  position: absolute;
+  color: #fff;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.sidebar .profile_content .profile {
+  position: relative;
+  padding: 10px 6px;
+  height: 60px;
+  background: #1d1b31;
+}
+
+.sidebar .profile_content .profile .profile_details {
+  display: flex;
+  align-items: center
+}
+
+.sidebar .profile_content .profile .profile_details img {
+  height: 45px;
+  width: 45px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.sidebar .profile_content .profile .profile_details .name_job{
+  margin-left: 10px;
+}
+
+.sidebar .profile_content .profile .profile_details .name {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.sidebar .profile_content .profile .profile_details .job {
+  font-size: 12px;
+}
+
+.sidebar .profile_content .profile #log_out {
+  position: absolute;
+  left: 88%;
+  bottom: 5px;
+  transform: translateX(-50%);
+  min-width: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  border-radius: 12px;
 }
