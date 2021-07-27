@@ -1,11 +1,15 @@
 @import "config";
 @import "variable";
 
+.content {
+  display: flex;
+  flex-direction: row;
+
+}
+
 .sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
+  position: relative;
+  height: 100vh;
   width: 78px;
   background: $primary-color;
   padding: 6px 14px;
@@ -22,6 +26,7 @@
     text-align: center;
     line-height: 50px;
     transform: translateX(-50%);
+    transition: all .4s ease;
   }
 
   ul {
@@ -33,7 +38,6 @@
       line-height: 50px;
       height: 50px;
       width: 100%;
-      margin: 0 5px;
 
       &:hover .tooltip {
         transition: all .5s ease;
@@ -122,6 +126,7 @@
       align-items: center;
       opacity: 0;
       pointer-events: none;
+      transition: all .2s ease;
 
       i {
         font-size: 2rem;
@@ -138,6 +143,7 @@
   .links_name {
     opacity: 0;
     pointer-events: none;
+    transition: all .3s ease;
   }
 
   .profile_content {
@@ -159,6 +165,7 @@
         opacity: 0;
         pointer-events: none;
         white-space: nowrap;
+        transition: all .6s ease;
 
         img {
           height: 45px;
@@ -191,6 +198,7 @@
         font-size: 20px;
         border-radius: 12px;
         text-align: center;
+        transition: all .4s ease;
       }
     }
   }
@@ -238,10 +246,7 @@
 }
 
 .home_content {
-  position: absolute;
-  height: 100%;
-  width: calc(100% - 78px);
-  left: 78px;
+  height: 100vh;
   transition: all .5s ease;
 
   .text {
@@ -250,9 +255,4 @@
     color: $light-color;
     margin: 12px;
   }
-}
-
-.sidebar.active ~ .home_content {
-  width: calc(100% - 240px);
-  left: 240px;
 }
