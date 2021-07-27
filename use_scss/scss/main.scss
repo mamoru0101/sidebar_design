@@ -13,7 +13,7 @@
   width: 78px;
   background: $primary-color;
   padding: 6px 14px;
-  transition: all .5s ease;
+  @include transition-ease;
 
   #btn {
     position: absolute;
@@ -26,7 +26,7 @@
     text-align: center;
     line-height: 50px;
     transform: translateX(-50%);
-    transition: all .4s ease;
+    @include transition-ease(.4s);
   }
 
   ul {
@@ -40,7 +40,7 @@
       width: 100%;
 
       &:hover .tooltip {
-        transition: all .5s ease;
+        @include transition-ease;
         top: 50%;
         opacity: 1;
       }
@@ -72,7 +72,6 @@
         line-height: 35px;
         text-align: center;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-        transition: 0s;
         opacity: 0;
         pointer-events: none;
         display: block;
@@ -83,7 +82,7 @@
         z-index: 99;
         color: #fff;
         font-size: 22px;
-        transition: all .5s ease;
+        @include transition-ease;
 
         &:hover {
           background: #fff;
@@ -96,7 +95,7 @@
         display: flex;
         align-items: center;
         text-decoration: none;
-        transition: all .4s ease;
+        @include transition-ease(.4s);
         border-radius: 12px;
         white-space: nowrap;
 
@@ -126,7 +125,8 @@
       align-items: center;
       opacity: 0;
       pointer-events: none;
-      transition: all .2s ease;
+      @include transition-ease(.2s);
+
 
       i {
         font-size: 2rem;
@@ -143,7 +143,8 @@
   .links_name {
     opacity: 0;
     pointer-events: none;
-    transition: all .3s ease;
+    @include transition-ease(.3s);
+
   }
 
   .profile_content {
@@ -165,7 +166,7 @@
         opacity: 0;
         pointer-events: none;
         white-space: nowrap;
-        transition: all .6s ease;
+        @include transition-ease(.6s);
 
         img {
           height: 45px;
@@ -198,7 +199,7 @@
         font-size: 20px;
         border-radius: 12px;
         text-align: center;
-        transition: all .4s ease;
+        @include transition-ease;
       }
     }
   }
@@ -247,12 +248,18 @@
 
 .home_content {
   height: 100vh;
-  transition: all .5s ease;
 
   .text {
     font-size: 25px;
     font-weight: 500;
     color: $light-color;
     margin: 12px;
+  }
+}
+
+
+@for $i from 1 through 9 {
+  .sidebar.active ul li:nth-child(#{$i}) a .links_name {
+    transition-delay: ($i*0.02s) + .05s;
   }
 }

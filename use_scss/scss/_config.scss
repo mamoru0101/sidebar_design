@@ -13,3 +13,7 @@ body {
   width: 100%;
   overflow: hidden;
 }
+
+@mixin transition-ease($duration:.5s) {
+  transition: all $duration cubic-bezier(0.22, 0.61, 0.36, 1);
+}
